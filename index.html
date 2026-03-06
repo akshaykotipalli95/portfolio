@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kotipalli Akshay | Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -277,12 +279,12 @@
         </article>
         <article class="project-card certificate-card cert-item-extra">
           <div class="certificate-preview certificate-preview-pdf">
-            <img class="certificate-image" src="ST%23IS%237662_page-0001.jpg" alt="Supraja Technologies Internship Completion Certificate" loading="lazy" />
+            <img class="certificate-image" src="suprajaintern.jpg" alt="Supraja Technologies Internship Completion Certificate" loading="lazy" />
           </div>
           <h3>Supraja Internship Completion Certificate</h3>
           <div class="certificate-actions">
-            <a href="ST%23IS%237662_page-0001.jpg" class="btn btn-outline" target="_blank" rel="noopener">View Certificate</a>
-            <a href="ST%23IS%237662_page-0001.jpg" class="btn btn-outline" download>Download</a>
+            <a href="suprajaintern.jpg" class="btn btn-outline" target="_blank" rel="noopener">View Certificate</a>
+            <a href="suprajaintern.jpg" class="btn btn-outline" download>Download</a>
           </div>
         </article>
         <article class="project-card certificate-card cert-item-extra">
@@ -402,22 +404,31 @@
 
     <section id="contact" class="section container reveal">
       <h2>Contact</h2>
-      <p>Email: kotipalliakshay51@gmail.com | Mobile: +91-9502284857</p>
+      <p class="contact-intro">Email: kotipalliakshay51@gmail.com | Mobile: +91-9502284857</p>
+
       <div class="contact-card">
         <form id="contactForm" class="contact-form">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Enter your name" required />
+          <div class="contact-row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Enter your name" autocomplete="name" required />
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required />
+            </div>
           </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="Enter your email" required />
-          </div>
+
           <div>
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="6" placeholder="Write your message" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+
+          <div class="contact-actions">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p id="formStatus" class="form-note" aria-live="polite"></p>
+          </div>
         </form>
       </div>
     </section>
