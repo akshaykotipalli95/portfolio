@@ -116,6 +116,7 @@ footer {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
+  position: relative;
 }
 
 .header .navbar.container {
@@ -1170,6 +1171,8 @@ footer {
 @media (max-width: 760px) {
   .menu-btn {
     display: block;
+    position: relative;
+    z-index: 121;
   }
 
   .nav-links {
@@ -1182,11 +1185,20 @@ footer {
     display: grid;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.35s ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 120;
+    transition: max-height 0.35s ease, opacity 0.2s ease;
   }
 
   .nav-links.open {
-    max-height: 320px;
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-links li {

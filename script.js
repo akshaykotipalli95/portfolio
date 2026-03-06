@@ -7,18 +7,33 @@ const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 const toggleCertificatesBtn = document.getElementById("toggleCertificates");
 const extraCertificates = document.querySelectorAll(".cert-item-extra");
+let closeMobileMenu = () => {};
 
 if (menuBtn && navLinks) {
+  menuBtn.setAttribute("aria-expanded", "false");
+
+  closeMobileMenu = () => {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-label", "Open navigation");
+  };
+
   menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
+    const isOpen = navLinks.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
+    menuBtn.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
+      closeMobileMenu();
+    }
   });
 }
 
 navAnchors.forEach((anchor) => {
   anchor.addEventListener("click", () => {
-    if (navLinks) {
-      navLinks.classList.remove("open");
-    }
+    closeMobileMenu();
   });
 });
 
